@@ -34,10 +34,6 @@ const TAKEAWAYS = [
   },
 ]
 
-const PULL_QUOTE = {
-  text: 'Stop demonizing AI and start teaching us how to use it responsibly.',
-  color: 'var(--green)',
-}
 
 function TakeawayBody({ item }) {
   if (item.bodyJSX) {
@@ -76,19 +72,7 @@ export default function KeyTakeaways() {
         >
           Key Takeaways
         </h2>
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            color: '#666',
-            marginBottom: '3.5rem',
-            fontSize: '1.05rem',
-            lineHeight: 1.6,
-          }}
-        >
-          Six themes that emerged from the data — written by Matt J, with Claude helping surface the numbers.
-        </p>
-
-        <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 3.5rem', display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
+        <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 1rem', display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
           {TAKEAWAYS.map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
               <span
@@ -129,38 +113,6 @@ export default function KeyTakeaways() {
           ))}
         </ol>
 
-        <blockquote
-          style={{
-            margin: 0,
-            padding: '1.5rem 2rem',
-            borderLeft: `5px solid ${PULL_QUOTE.color}`,
-            background: '#fff',
-            borderRadius: '0 8px 8px 0',
-            boxShadow: '2px 4px 12px rgba(0,0,0,0.06)',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: 'var(--font-hand)',
-              fontSize: '1.5rem',
-              lineHeight: 1.4,
-              color: 'var(--dark)',
-              margin: 0,
-            }}
-          >
-            &ldquo;{PULL_QUOTE.text}&rdquo;
-          </p>
-          <footer
-            style={{
-              marginTop: '0.75rem',
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.85rem',
-              color: '#888',
-            }}
-          >
-            — Workshop participant
-          </footer>
-        </blockquote>
       </div>
     </section>
   )
