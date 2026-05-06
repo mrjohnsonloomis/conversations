@@ -168,33 +168,46 @@ export default function StickyNotesWall({ data, onViewAll }) {
           ))}
         </div>
 
-        {/* View All link */}
+        {/* View All / Search CTA */}
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
           <button
             onClick={onViewAll}
             style={{
               fontFamily: 'var(--font-body)',
-              fontWeight: 500,
-              fontSize: '0.95rem',
-              padding: '0.7rem 1.8rem',
+              fontWeight: 600,
+              fontSize: '1.05rem',
+              padding: '0.9rem 2.2rem',
               borderRadius: 999,
-              border: '2px solid var(--dark)',
-              background: 'transparent',
-              color: 'var(--dark)',
+              border: 'none',
+              background: 'var(--dark)',
+              color: '#fff',
               cursor: 'pointer',
-              transition: 'background 0.15s ease, color 0.15s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.6rem',
+              boxShadow: '0 4px 18px rgba(0,0,0,0.18)',
+              transition: 'transform 0.15s ease, box-shadow 0.15s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--dark)'
-              e.currentTarget.style.color = '#fff'
+              e.currentTarget.style.transform = 'translateY(-2px)'
+              e.currentTarget.style.boxShadow = '0 8px 28px rgba(0,0,0,0.24)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = 'var(--dark)'
+              e.currentTarget.style.transform = ''
+              e.currentTarget.style.boxShadow = '0 4px 18px rgba(0,0,0,0.18)'
             }}
           >
-            View all 1,290 responses →
+            <span style={{ fontSize: '1.1rem' }}>🔍</span>
+            Search &amp; browse all 1,290 responses
           </button>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.82rem',
+            color: '#aaa',
+            marginTop: '0.6rem',
+          }}>
+            Search for any word or phrase across every response
+          </p>
         </div>
       </div>
     </section>
