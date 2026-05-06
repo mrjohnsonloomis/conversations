@@ -92,27 +92,6 @@ export default function Hero() {
 
       {/* Main content */}
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 780 }}>
-        {/* Badge */}
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            background: 'rgba(255,255,255,0.85)',
-            border: '1.5px solid var(--gray)',
-            borderRadius: 999,
-            padding: '0.35rem 1rem',
-            fontSize: '0.8rem',
-            fontWeight: 500,
-            color: '#555',
-            marginBottom: '1.5rem',
-            letterSpacing: '0.03em',
-          }}
-        >
-          <span>📌</span>
-          Loomis Chaffee — AI Workshop Exit Tickets
-        </div>
-
         {/* Heading */}
         <h1
           style={{
@@ -167,8 +146,7 @@ export default function Hero() {
           }}
         >
           At the end of a facilitated conversation between students and faculty about AI at Loomis Chaffee,
-          participants shared their thoughts on sticky notes. Here's what they said — 1,290 responses,
-          unfiltered and in their own words.
+          participants shared their thoughts on sticky notes. Here's what they said — unfiltered, in their own words.
         </p>
 
         {/* CTA */}

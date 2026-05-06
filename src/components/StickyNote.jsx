@@ -4,27 +4,27 @@ const CATEGORY_COLORS = {
   CONTINUE: '#80CAFF',
 }
 
-const CATEGORY_DOTS = {
-  STOP: '#e85d4a',
-  START: '#2eaa60',
-  CONTINUE: '#1a8cd8',
+function fontSizeForLength(len) {
+  if (len < 40)  return '1.75rem'
+  if (len < 70)  return '1.5rem'
+  if (len < 100) return '1.3rem'
+  if (len < 140) return '1.1rem'
+  if (len < 180) return '0.95rem'
+  return '0.82rem'
 }
 
 export default function StickyNote({ response, category, flag, index }) {
   const bgColor = CATEGORY_COLORS[category] ?? '#FDF5A3'
-  const dotColor = CATEGORY_DOTS[category] ?? '#888'
-
-  // Deterministic rotation between -4 and +4 degrees
   const rotation = ((index * 7 + 3) % 9) - 4
-
   const isFlagged = flag && flag.trim() !== ''
+  const fontSize = fontSizeForLength(response?.length ?? 0)
 
   return (
     <div
       style={{
         background: bgColor,
         borderRadius: 2,
-        padding: '1.1rem 1rem 1rem',
+        padding: '1.4rem 1.25rem',
         boxShadow: '2px 4px 12px rgba(0,0,0,0.15)',
         transform: `rotate(${rotation}deg)`,
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
@@ -34,7 +34,8 @@ export default function StickyNote({ response, category, flag, index }) {
         aspectRatio: '1 / 1',
         display: 'flex',
         flexDirection: 'column',
-        gap: '0.5rem',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = `rotate(${rotation}deg) scale(1.04)`
@@ -47,7 +48,7 @@ export default function StickyNote({ response, category, flag, index }) {
         e.currentTarget.style.zIndex = ''
       }}
     >
-      {/* Top strip (mimics sticky note adhesive edge) */}
+      {/* Adhesive strip at top */}
       <div
         aria-hidden="true"
         style={{
@@ -55,51 +56,39 @@ export default function StickyNote({ response, category, flag, index }) {
           top: 0,
           left: 0,
           right: 0,
-          height: 6,
-          background: `rgba(0,0,0,0.04)`,
+          height: 7,
+          background: 'rgba(0,0,0,0.05)',
           borderRadius: '2px 2px 0 0',
         }}
       />
 
-      {/* Header row: category dot + flag indicator */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div
+      {isFlagged && (
+        <span
+          title="Partial / illegible"
           style={{
-            width: 10,
-            height: 10,
-            borderRadius: '50%',
-            background: dotColor,
-            flexShrink: 0,
+            position: 'absolute',
+            top: '0.6rem',
+            right: '0.6rem',
+            fontSize: '0.65rem',
+            fontFamily: 'var(--font-body)',
+            color: '#666',
+            background: 'rgba(0,0,0,0.08)',
+            borderRadius: 4,
+            padding: '1px 5px',
           }}
-          title={category}
-        />
-        {isFlagged && (
-          <span
-            title="Partial / illegible"
-            style={{
-              fontSize: '0.65rem',
-              fontFamily: 'var(--font-body)',
-              color: '#666',
-              background: 'rgba(0,0,0,0.08)',
-              borderRadius: 4,
-              padding: '1px 5px',
-              letterSpacing: '0.04em',
-            }}
-          >
-            ~partial
-          </span>
-        )}
-      </div>
+        >
+          ~partial
+        </span>
+      )}
 
-      {/* Response text */}
       <p
         style={{
           fontFamily: 'var(--font-hand)',
-          fontSize: '1.25rem',
-          lineHeight: 1.45,
+          fontSize,
+          lineHeight: 1.35,
           color: '#1a1a1a',
           margin: 0,
-          flex: 1,
+          textAlign: 'center',
           wordBreak: 'break-word',
         }}
       >

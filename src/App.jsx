@@ -97,7 +97,7 @@ export default function App() {
 
         <StickyNotesWall data={data} onViewAll={() => setViewAll(true)} />
 
-        <Visualizations data={data} />
+        <Visualizations />
 
         <KeyTakeaways />
       </main>

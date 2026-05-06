@@ -1,0 +1,809 @@
+{
+  "STOP": {
+    "count": 419,
+    "clusters": [
+      {
+        "id": 5,
+        "label": "Essays \u00b7 Usage",
+        "terms": [
+          "essays",
+          "usage",
+          "faculty",
+          "assessments",
+          "feel",
+          "kids"
+        ],
+        "count": 317,
+        "samples": [
+          "Stop making students feel, especially when it comes to English essays, that we aren't trusted, or that whatever we write will come under heavy suspicion.",
+          "I think Loomis should stop not talking about using AI, because a lot of students beneficially use it, but are scared to speak up and share about it because they feel they will get into trouble, even though their use is safe.\nHey, I am so apparent in this world, and we need to stop seeing it as unimportant, because in the future, because it is the future of this world. We should stop creating such a stigma around AI. We should stop treating AI like it's evil and only doing in-class assignments out of fear of AI. When we should stop doing so many in-class essays, instead find an AI preventative measure or allowed to type in class.",
+          "Stop being so strict on the rules, knowing kids are gonna use it. Or by talking about it as much as we do."
+        ]
+      },
+      {
+        "id": 7,
+        "label": "Negative \u00b7 Connotation",
+        "terms": [
+          "negative",
+          "connotation",
+          "towards",
+          "recognize",
+          "viewing",
+          "around"
+        ],
+        "count": 23,
+        "samples": [
+          "Loomis should stop having a negative outlook on AI.",
+          "Stop being negative towards AI.",
+          "Stopping is negative towards AI."
+        ]
+      },
+      {
+        "id": 1,
+        "label": "Case \u00b7 Cases",
+        "terms": [
+          "bad",
+          "case",
+          "cases",
+          "every",
+          "focusing",
+          "feel"
+        ],
+        "count": 19,
+        "samples": [
+          "Stop the concern of AI being used. A bad asset.",
+          "Stop saying it's bad.",
+          "Loomis should stop saying it is such a bad thing."
+        ]
+      },
+      {
+        "id": 2,
+        "label": "Assuming \u00b7 Worst",
+        "terms": [
+          "assuming",
+          "worst",
+          "cheating",
+          "bad",
+          "ubiquitous",
+          "inevitable"
+        ],
+        "count": 17,
+        "samples": [
+          "Stop assuming AI is used only dishonestly.",
+          "Loomis should stop assuming the worse about when we use AI.",
+          "Loomis should stop assuming the worst about when we use AI."
+        ]
+      },
+      {
+        "id": 8,
+        "label": "Assignments \u00b7 Certain",
+        "terms": [
+          "assignments",
+          "certain",
+          "create",
+          "prevent",
+          "banning",
+          "writing"
+        ],
+        "count": 16,
+        "samples": [
+          "Stop having many assignments where all AI is banned.",
+          "Stop making it required for some assignments.",
+          "Stop using AI in so many assignments."
+        ]
+      },
+      {
+        "id": 4,
+        "label": "Treating \u00b7 Cannot",
+        "terms": [
+          "treating",
+          "cannot",
+          "evil",
+          "cheating",
+          "comes",
+          "system"
+        ],
+        "count": 11,
+        "samples": [
+          "Stop treating AI as something that should be perfect, but isn't.",
+          "Stop treating AI as something only used to cheat.",
+          "Stop treating all AI use as cheating, or making it something that we cannot talk about."
+        ]
+      },
+      {
+        "id": 3,
+        "label": "Demonizing \u00b7 Everything",
+        "terms": [
+          "demonizing",
+          "everything",
+          "banning",
+          "review",
+          "cases",
+          "especially"
+        ],
+        "count": 6,
+        "samples": [
+          "Then we should stop demonizing AI.",
+          "Stop demonizing AI.",
+          "Loomis should stop demonizing AI."
+        ]
+      },
+      {
+        "id": 6,
+        "label": "Grade \u00b7 Assessments",
+        "terms": [
+          "grade",
+          "assessments",
+          "unless",
+          "getting",
+          "generated",
+          "good"
+        ],
+        "count": 6,
+        "samples": [
+          "Loomis should stop allowing teachers to grade using AI.",
+          "We should stop letting teachers grade using AI.",
+          "Stop using AI to grade work."
+        ]
+      },
+      {
+        "id": 0,
+        "label": "Replacement \u00b7 Teaching",
+        "terms": [
+          "replacement",
+          "teaching",
+          "tutoring",
+          "review",
+          "personal",
+          "relying"
+        ],
+        "count": 4,
+        "samples": [
+          "Stop allowing teachers to use AI for the replacement of original top.\nStop allowing teachers to use AI for the replacement of original thought.",
+          "Loomis should stop using AI as a replacement for teaching or tutoring.",
+          "Loomis should stop using AI as a replacement for teaching and students should stop relying fully on AI."
+        ]
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "bad",
+        "score": 15.43
+      },
+      {
+        "phrase": "assignments",
+        "score": 13.32
+      },
+      {
+        "phrase": "negative",
+        "score": 11.55
+      },
+      {
+        "phrase": "assuming",
+        "score": 11.1
+      },
+      {
+        "phrase": "assessments",
+        "score": 7.84
+      },
+      {
+        "phrase": "usage",
+        "score": 7.25
+      },
+      {
+        "phrase": "banning",
+        "score": 6.82
+      },
+      {
+        "phrase": "around",
+        "score": 6.81
+      },
+      {
+        "phrase": "treating",
+        "score": 6.67
+      },
+      {
+        "phrase": "feel",
+        "score": 6.63
+      },
+      {
+        "phrase": "writing",
+        "score": 6.43
+      },
+      {
+        "phrase": "faculty",
+        "score": 5.94
+      },
+      {
+        "phrase": "comes",
+        "score": 5.89
+      },
+      {
+        "phrase": "kids",
+        "score": 5.82
+      },
+      {
+        "phrase": "essays",
+        "score": 5.61
+      },
+      {
+        "phrase": "grade",
+        "score": 5.4
+      },
+      {
+        "phrase": "cheating",
+        "score": 5.4
+      },
+      {
+        "phrase": "posters",
+        "score": 5.34
+      },
+      {
+        "phrase": "guidelines",
+        "score": 5.06
+      },
+      {
+        "phrase": "demonizing",
+        "score": 5.02
+      },
+      {
+        "phrase": "fear",
+        "score": 5.02
+      },
+      {
+        "phrase": "thinking",
+        "score": 4.9
+      },
+      {
+        "phrase": "future",
+        "score": 4.81
+      },
+      {
+        "phrase": "focusing",
+        "score": 4.79
+      },
+      {
+        "phrase": "good",
+        "score": 4.67
+      }
+    ]
+  },
+  "START": {
+    "count": 446,
+    "clusters": [
+      {
+        "id": 6,
+        "label": "Learning \u00b7 Classes",
+        "terms": [
+          "learning",
+          "classes",
+          "learn",
+          "writing",
+          "educating",
+          "study"
+        ],
+        "count": 251,
+        "samples": [
+          "I think Loomis should start educating students on the environmental and ethical aspects of AI in regular classes, such as seminar if it isn't already. I think students should be able to properly learn about the +and negatives completely without having to take a class for it.",
+          "I think Loomis should start accepting candid conversations about AI with the goal of learning rather than punishment. Also, teach how to use it better in seminar classes.",
+          "I think Loomis should start educating students on the environmental and ethical aspects of AI in regular classes, such as seminar, if it isn't already. Students should be able to properly learn about the positives and negatives without having to take a separate class for it."
+        ]
+      },
+      {
+        "id": 0,
+        "label": "Clear \u00b7 Guidelines",
+        "terms": [
+          "clear",
+          "guidelines",
+          "okay",
+          "classes",
+          "unacceptable",
+          "acceptable"
+        ],
+        "count": 31,
+        "samples": [
+          "And we should start being more clear on how to use AI in class.",
+          "Loomis should start being more clear on what is allowed and not allowed for using AI.",
+          "Loomis should start being more clear about AI use."
+        ]
+      },
+      {
+        "id": 1,
+        "label": "Teaching \u00b7 Properly",
+        "terms": [
+          "teaching",
+          "properly",
+          "tools",
+          "maybe",
+          "ethics",
+          "real"
+        ],
+        "count": 30,
+        "samples": [
+          "Loomis should start teaching students how to use it.",
+          "Loomis should start teaching students how to properly use AI.",
+          "Maybe we should start teaching how to use AI."
+        ]
+      },
+      {
+        "id": 5,
+        "label": "Assignments \u00b7 Personal",
+        "terms": [
+          "assignments",
+          "personal",
+          "prompt",
+          "certain",
+          "building",
+          "kids"
+        ],
+        "count": 28,
+        "samples": [
+          "Loomis should start valuing the hard work in assignments.",
+          "Start making assignments and make it harder to use AI or make assignments where AI is involved. It can be used as a tool.",
+          "We should start designing more assignments, knowing that AI will be likely used as a source or tool."
+        ]
+      },
+      {
+        "id": 7,
+        "label": "Specific \u00b7 Expectations",
+        "terms": [
+          "specific",
+          "expectations",
+          "policies",
+          "explicit",
+          "telling",
+          "around"
+        ],
+        "count": 28,
+        "samples": [
+          "Start being more specific about expectations.",
+          "Start being more specific about AI policies and teacher's expectations and values.",
+          "Start being more specific about when AI could be used."
+        ]
+      },
+      {
+        "id": 8,
+        "label": "Assignment \u00b7 Every",
+        "terms": [
+          "assignment",
+          "every",
+          "expectations",
+          "requiring",
+          "graded",
+          "clear"
+        ],
+        "count": 24,
+        "samples": [
+          "Start clarifying assignment prompts with what is or isn't okay to use on the assignment.",
+          "Start requiring teachers to identify AI expectations on every graded assignment.",
+          "Start requiring teachers to identify AI expectations on every graded assignment."
+        ]
+      },
+      {
+        "id": 4,
+        "label": "Boundaries \u00b7 Clearer",
+        "terms": [
+          "boundaries",
+          "clearer",
+          "system",
+          "set",
+          "control",
+          "rules"
+        ],
+        "count": 20,
+        "samples": [
+          "Loomis should start revamping entirely the AI guideline system to make boundaries clearer.",
+          "Make clearer rules and boundaries on the usage of AI. Build a closed AI model of student use for Loomis.",
+          "Make clearer rules and boundaries on the usage of AI. Build a closed AI model for student use at Loomis."
+        ]
+      },
+      {
+        "id": 2,
+        "label": "Example \u00b7 Understand",
+        "terms": [
+          "example",
+          "understand",
+          "better",
+          "give",
+          "teach",
+          "answer"
+        ],
+        "count": 17,
+        "samples": [
+          "We should start helping students to understand the power of AI, and how to use the technology in a respectable manner. Start making example formulas for chemistry.",
+          "Create a better use for it and teach kids how to use it. For example, a class on AI.",
+          "Create a better use for AI and teach kids how to use it. For example, a class on AI."
+        ]
+      },
+      {
+        "id": 3,
+        "label": "Open \u00b7 Studying",
+        "terms": [
+          "open",
+          "studying",
+          "tool",
+          "great",
+          "minded",
+          "areas"
+        ],
+        "count": 17,
+        "samples": [
+          "Start being more open to students using AI for editorial advice.",
+          "But we should start to be more open about when it is used.",
+          "Loomis should be more open to using it."
+        ]
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "clear",
+        "score": 16.33
+      },
+      {
+        "phrase": "assignments",
+        "score": 15.61
+      },
+      {
+        "phrase": "teaching",
+        "score": 15.45
+      },
+      {
+        "phrase": "learning",
+        "score": 13.17
+      },
+      {
+        "phrase": "open",
+        "score": 10.39
+      },
+      {
+        "phrase": "assignment",
+        "score": 9.97
+      },
+      {
+        "phrase": "tool",
+        "score": 9.56
+      },
+      {
+        "phrase": "expectations",
+        "score": 8.79
+      },
+      {
+        "phrase": "specific",
+        "score": 8.57
+      },
+      {
+        "phrase": "classes",
+        "score": 8.39
+      },
+      {
+        "phrase": "guidelines",
+        "score": 7.71
+      },
+      {
+        "phrase": "give",
+        "score": 6.95
+      },
+      {
+        "phrase": "learn",
+        "score": 6.87
+      },
+      {
+        "phrase": "boundaries",
+        "score": 6.63
+      },
+      {
+        "phrase": "certain",
+        "score": 6.52
+      },
+      {
+        "phrase": "writing",
+        "score": 6.45
+      },
+      {
+        "phrase": "policy",
+        "score": 6.42
+      },
+      {
+        "phrase": "encouraging",
+        "score": 6.36
+      },
+      {
+        "phrase": "usage",
+        "score": 6.29
+      },
+      {
+        "phrase": "policies",
+        "score": 6.14
+      },
+      {
+        "phrase": "creating",
+        "score": 6.01
+      },
+      {
+        "phrase": "study",
+        "score": 5.89
+      },
+      {
+        "phrase": "faculty",
+        "score": 5.79
+      },
+      {
+        "phrase": "create",
+        "score": 5.64
+      },
+      {
+        "phrase": "thinking",
+        "score": 5.61
+      }
+    ]
+  },
+  "CONTINUE": {
+    "count": 425,
+    "clusters": [
+      {
+        "id": 5,
+        "label": "Assignments \u00b7 Learning",
+        "terms": [
+          "assignments",
+          "learning",
+          "studying",
+          "specific",
+          "faculty",
+          "good"
+        ],
+        "count": 247,
+        "samples": [
+          "Continue labeling assignments red, yellow, green, but more specific.",
+          "Continue allowing AI to be used for assignments.",
+          "Continue to have assignments where AI is required."
+        ]
+      },
+      {
+        "id": 2,
+        "label": "Conversations \u00b7 Around",
+        "terms": [
+          "conversations",
+          "around",
+          "healthy",
+          "faculty",
+          "include",
+          "regarding"
+        ],
+        "count": 34,
+        "samples": [
+          "Continue having conversations about it.",
+          "Loomis should continue having conversations about AI and how it should be or shouldn't be used.",
+          "Loomis should continue to have conversations like these."
+        ]
+      },
+      {
+        "id": 8,
+        "label": "Study \u00b7 Guides",
+        "terms": [
+          "study",
+          "guides",
+          "create",
+          "tools",
+          "tool",
+          "tests"
+        ],
+        "count": 29,
+        "samples": [
+          "Continue to use AI for helping us study.",
+          "Continue allowing us to use it to study.",
+          "Loomis should continue letting students use AI for study help."
+        ]
+      },
+      {
+        "id": 4,
+        "label": "Clear \u00b7 Expectations",
+        "terms": [
+          "clear",
+          "expectations",
+          "okay",
+          "assignment",
+          "setting",
+          "guidelines"
+        ],
+        "count": 28,
+        "samples": [
+          "We should continue setting clear expectations for AI use.",
+          "Continue giving clear guidelines and expectations.",
+          "Continue setting boundaries and making expectations clear."
+        ]
+      },
+      {
+        "id": 3,
+        "label": "Open \u00b7 Conversations",
+        "terms": [
+          "open",
+          "conversations",
+          "mind",
+          "minded",
+          "conversation",
+          "dialogue"
+        ],
+        "count": 27,
+        "samples": [
+          "Continue being open about AI use.",
+          "Continue having open conversations about AI.",
+          "Continue open dialogue between students and teachers."
+        ]
+      },
+      {
+        "id": 6,
+        "label": "Discussions \u00b7 Perspectives",
+        "terms": [
+          "discussions",
+          "perspectives",
+          "involve",
+          "aware",
+          "differently",
+          "approach"
+        ],
+        "count": 22,
+        "samples": [
+          "Continue having discussions about it.",
+          "Continue having discussions like this.",
+          "Continue having discussions about it."
+        ]
+      },
+      {
+        "id": 1,
+        "label": "Flint \u00b7 Tool",
+        "terms": [
+          "flint",
+          "tool",
+          "classes",
+          "practice",
+          "generate",
+          "education"
+        ],
+        "count": 20,
+        "samples": [
+          "Continue to allow / enforce Flint AI.",
+          "Then we should continue having students use the flint AI tool and using AI in a healthy way.",
+          "Loomis should keep giving students ways to study with AI like Flint."
+        ]
+      },
+      {
+        "id": 0,
+        "label": "Encouraging \u00b7 Thinking",
+        "terms": [
+          "encouraging",
+          "thinking",
+          "creative",
+          "write",
+          "transparent",
+          "studying"
+        ],
+        "count": 11,
+        "samples": [
+          "Loomis should continue encouraging creativity from students and teachers.",
+          "Continue encouraging AI use.",
+          "Continue encouraging learning to think on your own."
+        ]
+      },
+      {
+        "id": 7,
+        "label": "Problems \u00b7 Practice",
+        "terms": [
+          "problems",
+          "practice",
+          "kids",
+          "looking",
+          "study",
+          "educating"
+        ],
+        "count": 7,
+        "samples": [
+          "Continue allowing kids to use it to study and make practice problems.",
+          "Continue allowing students to use AI to make study guides and practice problems.",
+          "Continue trying to work through the problems of AI."
+        ]
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "conversations",
+        "score": 24.76
+      },
+      {
+        "phrase": "study",
+        "score": 15.3
+      },
+      {
+        "phrase": "discussions",
+        "score": 14.9
+      },
+      {
+        "phrase": "open",
+        "score": 12.28
+      },
+      {
+        "phrase": "assignments",
+        "score": 11.98
+      },
+      {
+        "phrase": "learning",
+        "score": 10.86
+      },
+      {
+        "phrase": "faculty",
+        "score": 9.89
+      },
+      {
+        "phrase": "studying",
+        "score": 9.01
+      },
+      {
+        "phrase": "clear",
+        "score": 8.45
+      },
+      {
+        "phrase": "tool",
+        "score": 8.11
+      },
+      {
+        "phrase": "specific",
+        "score": 7.78
+      },
+      {
+        "phrase": "encouraging",
+        "score": 7.71
+      },
+      {
+        "phrase": "educating",
+        "score": 7.36
+      },
+      {
+        "phrase": "flint",
+        "score": 7.11
+      },
+      {
+        "phrase": "helpful",
+        "score": 7.0
+      },
+      {
+        "phrase": "expectations",
+        "score": 6.2
+      },
+      {
+        "phrase": "conversation",
+        "score": 5.98
+      },
+      {
+        "phrase": "classes",
+        "score": 5.92
+      },
+      {
+        "phrase": "essays",
+        "score": 5.55
+      },
+      {
+        "phrase": "good",
+        "score": 5.54
+      },
+      {
+        "phrase": "tools",
+        "score": 5.39
+      },
+      {
+        "phrase": "around",
+        "score": 5.31
+      },
+      {
+        "phrase": "policy",
+        "score": 5.16
+      },
+      {
+        "phrase": "guides",
+        "score": 5.16
+      },
+      {
+        "phrase": "study guides",
+        "score": 5.16
+      }
+    ]
+  }
+}
