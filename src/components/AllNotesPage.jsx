@@ -167,7 +167,7 @@ export default function AllNotesPage({ data, onBack }) {
             type="text"
             value={query}
             onChange={handleQueryChange}
-            placeholder="Search responses… try "policy", "essays", "trust", "flint""
+            placeholder="Search responses — try: policy, essays, trust, flint"
             style={{
               width: '100%',
               fontFamily: 'var(--font-body)',
