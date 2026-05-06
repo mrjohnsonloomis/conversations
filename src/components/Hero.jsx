@@ -1,47 +1,103 @@
+import { useLayoutEffect, useRef } from 'react'
+
 const FLOATING_NOTES = [
-  {
-    color: '#FFAFA3',
-    rotate: -8,
-    top: '10%',
-    left: '2%',
-    text: "Stop treating AI like it's cheating when it could be a learning tool.",
-  },
-  {
-    color: '#85E0A3',
-    rotate: 5,
-    top: '8%',
-    right: '2%',
-    text: 'Start teaching us how to use AI responsibly instead of banning it.',
-  },
-  {
-    color: '#80CAFF',
-    rotate: -4,
-    bottom: '15%',
-    left: '1%',
-    text: 'Continue having honest conversations about where AI fits in school.',
-  },
-  {
-    color: '#FBD767',
-    rotate: 9,
-    top: '42%',
-    right: '1%',
-    text: 'Start creating a clear, consistent policy that everyone understands.',
-  },
-  {
-    color: '#D9B8FF',
-    rotate: -6,
-    bottom: '12%',
-    right: '2%',
-    text: 'Stop assuming students are using AI to avoid learning.',
-  },
-  {
-    color: '#75D7F0',
-    rotate: 7,
-    top: '58%',
-    left: '2%',
-    text: 'Continue supporting teachers in exploring AI in their classrooms.',
-  },
+  { color: '#FFAFA3', rotate: -7,  top: '7%',    left: '1%',   text: "Stop treating AI like it's automatically cheating." },
+  { color: '#85E0A3', rotate:  5,  top: '5%',    right: '0%',  text: 'Start teaching us how to use AI responsibly.' },
+  { color: '#80CAFF', rotate: -4,  top: '36%',   left: '0%',   text: 'Continue having open, honest conversations about AI in school.' },
+  { color: '#FBD767', rotate:  8,  top: '34%',   right: '0%',  text: 'Start creating a clear, consistent policy everyone understands.' },
+  { color: '#D9B8FF', rotate: -5,  bottom: '8%', left: '1%',   text: 'Stop assuming students only use AI to cheat or avoid work.' },
+  { color: '#75D7F0', rotate:  6,  bottom: '6%', right: '0%',  text: 'AI is a tool — ban the misuse, not the tool.' },
 ]
+
+function FloatNote({ note }) {
+  const containerRef = useRef(null)
+  const textRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const container = containerRef.current
+    const text = textRef.current
+    if (!container || !text) return
+
+    const style = getComputedStyle(container)
+    const padV = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom)
+    const padH = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight)
+    const availH = (container.clientHeight - padV) * 0.86
+    const availW = container.clientWidth - padH
+
+    const probe = document.createElement('div')
+    probe.style.cssText = [
+      'position:absolute',
+      'visibility:hidden',
+      'pointer-events:none',
+      `width:${availW}px`,
+      'font-family:Caveat,cursive',
+      'font-weight:600',
+      'line-height:1.3',
+      'text-align:center',
+      'word-break:break-word',
+      'top:-9999px',
+      'left:-9999px',
+    ].join(';')
+    probe.textContent = note.text
+    document.body.appendChild(probe)
+
+    let lo = 11, hi = 72
+    while (lo < hi) {
+      const mid = Math.ceil((lo + hi) / 2)
+      probe.style.fontSize = `${mid}px`
+      if (probe.offsetHeight <= availH) lo = mid
+      else hi = mid - 1
+    }
+
+    document.body.removeChild(probe)
+    text.style.fontSize = `${lo}px`
+  }, [note.text])
+
+  return (
+    <div
+      ref={containerRef}
+      aria-hidden="true"
+      style={{
+        position: 'absolute',
+        top: note.top,
+        left: note.left,
+        right: note.right,
+        bottom: note.bottom,
+        width: 230,
+        height: 230,
+        background: note.color,
+        borderRadius: 2,
+        padding: '18px 16px',
+        boxShadow: '3px 6px 20px rgba(0,0,0,0.14)',
+        transform: `rotate(${note.rotate}deg)`,
+        zIndex: 0,
+        opacity: 0.88,
+        pointerEvents: 'none',
+        userSelect: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+      }}
+    >
+      <p
+        ref={textRef}
+        style={{
+          fontFamily: 'var(--font-hand)',
+          fontWeight: 600,
+          fontSize: '1rem',
+          lineHeight: 1.3,
+          color: '#222',
+          margin: 0,
+          textAlign: 'center',
+          wordBreak: 'break-word',
+        }}
+      >
+        {note.text}
+      </p>
+    </div>
+  )
+}
 
 export default function Hero() {
   return (
@@ -59,40 +115,11 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Floating decorative sticky notes */}
       {FLOATING_NOTES.map((note, i) => (
-        <div
-          key={i}
-          aria-hidden="true"
-          style={{
-            position: 'absolute',
-            top: note.top,
-            left: note.left,
-            right: note.right,
-            bottom: note.bottom,
-            width: 200,
-            background: note.color,
-            borderRadius: 2,
-            padding: '16px 18px',
-            boxShadow: '3px 6px 18px rgba(0,0,0,0.15)',
-            transform: `rotate(${note.rotate}deg)`,
-            zIndex: 0,
-            fontFamily: 'var(--font-hand)',
-            fontSize: 17,
-            color: '#333',
-            lineHeight: 1.4,
-            opacity: 0.85,
-            pointerEvents: 'none',
-            userSelect: 'none',
-          }}
-        >
-          {note.text}
-        </div>
+        <FloatNote key={i} note={note} />
       ))}
 
-      {/* Main content */}
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 780 }}>
-        {/* Heading */}
         <h1
           style={{
             fontFamily: 'var(--font-display)',
@@ -105,36 +132,20 @@ export default function Hero() {
           }}
         >
           What should Loomis{' '}
-          <span
-            style={{
-              background: 'linear-gradient(180deg, transparent 55%, var(--green) 55%)',
-              paddingBottom: 2,
-            }}
-          >
+          <span style={{ background: 'linear-gradient(180deg, transparent 55%, var(--green) 55%)', paddingBottom: 2 }}>
             Start
           </span>
           ,{' '}
-          <span
-            style={{
-              background: 'linear-gradient(180deg, transparent 55%, var(--coral) 55%)',
-              paddingBottom: 2,
-            }}
-          >
+          <span style={{ background: 'linear-gradient(180deg, transparent 55%, var(--coral) 55%)', paddingBottom: 2 }}>
             Stop
           </span>
           , and{' '}
-          <span
-            style={{
-              background: 'linear-gradient(180deg, transparent 55%, var(--blue) 55%)',
-              paddingBottom: 2,
-            }}
-          >
+          <span style={{ background: 'linear-gradient(180deg, transparent 55%, var(--blue) 55%)', paddingBottom: 2 }}>
             Continue
           </span>{' '}
           doing when it comes to AI?
         </h1>
 
-        {/* Subtitle */}
         <p
           style={{
             fontFamily: 'var(--font-body)',
@@ -149,7 +160,6 @@ export default function Hero() {
           participants shared their thoughts on sticky notes. Here's what they said — unfiltered, in their own words.
         </p>
 
-        {/* CTA */}
         <a
           href="#data"
           style={{
