@@ -4,7 +4,7 @@ const FLOATING_NOTES = [
     rotate: -8,
     top: '10%',
     left: '2%',
-    text: 'Stop treating AI like it's cheating when it could be a learning tool.',
+    text: "Stop treating AI like it's cheating when it could be a learning tool.",
   },
   {
     color: '#85E0A3',
