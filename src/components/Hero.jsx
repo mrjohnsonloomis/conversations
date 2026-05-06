@@ -144,7 +144,13 @@ function HowItWasMade() {
             The conversations produced over 1,200 sticky notes. Each one was read aloud by a human (me) and transcribed using Apple Voice Memos. The raw text was then cleaned and converted into a structured CSV file using Claude.
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: '#444', margin: '0 0 0.85rem' }}>
+            The data analysis — theme clustering and key phrase extraction — was done using standard Python libraries (scikit-learn, NLTK). The analysis is fairly rudimentary, but it surfaces real patterns in the data.
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: '#444', margin: '0 0 0.85rem' }}>
             The website started from a hand-drawn sketch on my iPad and detailed notes about desired functionality. I brought that sketch and the plan to Claude Code, which generated the website. I then configured GitHub to host the page you now see.
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: '#444', margin: '0 0 0.85rem' }}>
+            The takeaways at the end were written by me. Claude helped surface the data — counts, patterns, and representative quotes — to support the observations.
           </p>
           <p style={{ fontFamily: 'var(--font-hand)', fontSize: '1.1rem', color: '#666', margin: 0 }}>
             — Matt J
