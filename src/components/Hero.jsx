@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
 const FLOATING_NOTES = [
   { color: '#FFAFA3', rotate: -7,  top: '7%',    left: '1%',   text: "Stop treating AI like it's automatically cheating." },
@@ -99,6 +99,62 @@ function FloatNote({ note }) {
   )
 }
 
+function HowItWasMade() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div style={{ marginTop: '1.25rem' }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontWeight: 500,
+          fontSize: '0.82rem',
+          padding: '0.4rem 1rem',
+          borderRadius: 999,
+          border: '1.5px solid var(--purple)',
+          background: open ? 'var(--purple)' : 'rgba(217,184,255,0.18)',
+          color: 'var(--dark)',
+          cursor: 'pointer',
+          transition: 'background 0.15s ease',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.4rem',
+        }}
+      >
+        <span>{open ? '▲' : '✦'}</span>
+        How was this site made?
+      </button>
+
+      {open && (
+        <div
+          style={{
+            marginTop: '0.75rem',
+            background: 'rgba(255,255,255,0.92)',
+            border: '1.5px solid var(--purple)',
+            borderRadius: 14,
+            padding: '1.4rem 1.6rem',
+            maxWidth: 540,
+            margin: '0.75rem auto 0',
+            textAlign: 'left',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+          }}
+        >
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: '#444', margin: '0 0 0.85rem' }}>
+            The conversations produced over 1,200 sticky notes. Each one was read aloud by a human (me) and transcribed using Apple Voice Memos. The raw text was then cleaned and converted into a structured CSV file using Claude.
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', lineHeight: 1.7, color: '#444', margin: '0 0 0.85rem' }}>
+            The website started from a hand-drawn sketch on my iPad and detailed notes about desired functionality. I brought that sketch and the plan to Claude Code, which generated the website. I then configured GitHub to host the page you now see.
+          </p>
+          <p style={{ fontFamily: 'var(--font-hand)', fontSize: '1.1rem', color: '#666', margin: 0 }}>
+            — Matt J
+          </p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Hero() {
   return (
     <div
@@ -188,6 +244,8 @@ export default function Hero() {
         >
           Explore the data <span style={{ fontSize: '1.2rem' }}>↓</span>
         </a>
+
+        <HowItWasMade />
       </div>
     </div>
   )
