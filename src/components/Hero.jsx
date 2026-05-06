@@ -1,10 +1,46 @@
 const FLOATING_NOTES = [
-  { color: '#FFAFA3', rotate: -8, top: '12%', left: '4%', width: 110, text: 'Stop penalizing minor AI use' },
-  { color: '#85E0A3', rotate: 5, top: '15%', right: '5%', width: 120, text: 'Start teaching prompt skills' },
-  { color: '#80CAFF', rotate: -3, bottom: '22%', left: '6%', width: 105, text: 'Continue open discussion' },
-  { color: '#FBD767', rotate: 10, top: '40%', right: '3%', width: 100, text: 'Start clear AI policies' },
-  { color: '#D9B8FF', rotate: -6, bottom: '18%', right: '7%', width: 115, text: 'Stop banning tools' },
-  { color: '#75D7F0', rotate: 7, top: '60%', left: '3%', width: 108, text: 'Continue innovation' },
+  {
+    color: '#FFAFA3',
+    rotate: -8,
+    top: '10%',
+    left: '2%',
+    text: 'Stop treating AI like it's cheating when it could be a learning tool.',
+  },
+  {
+    color: '#85E0A3',
+    rotate: 5,
+    top: '8%',
+    right: '2%',
+    text: 'Start teaching us how to use AI responsibly instead of banning it.',
+  },
+  {
+    color: '#80CAFF',
+    rotate: -4,
+    bottom: '15%',
+    left: '1%',
+    text: 'Continue having honest conversations about where AI fits in school.',
+  },
+  {
+    color: '#FBD767',
+    rotate: 9,
+    top: '42%',
+    right: '1%',
+    text: 'Start creating a clear, consistent policy that everyone understands.',
+  },
+  {
+    color: '#D9B8FF',
+    rotate: -6,
+    bottom: '12%',
+    right: '2%',
+    text: 'Stop assuming students are using AI to avoid learning.',
+  },
+  {
+    color: '#75D7F0',
+    rotate: 7,
+    top: '58%',
+    left: '2%',
+    text: 'Continue supporting teachers in exploring AI in their classrooms.',
+  },
 ]
 
 export default function Hero() {
@@ -34,18 +70,18 @@ export default function Hero() {
             left: note.left,
             right: note.right,
             bottom: note.bottom,
-            width: note.width,
+            width: 200,
             background: note.color,
             borderRadius: 2,
-            padding: '10px 12px',
-            boxShadow: '2px 4px 12px rgba(0,0,0,0.15)',
+            padding: '16px 18px',
+            boxShadow: '3px 6px 18px rgba(0,0,0,0.15)',
             transform: `rotate(${note.rotate}deg)`,
             zIndex: 0,
             fontFamily: 'var(--font-hand)',
-            fontSize: 13,
+            fontSize: 17,
             color: '#333',
-            lineHeight: 1.35,
-            opacity: 0.82,
+            lineHeight: 1.4,
+            opacity: 0.85,
             pointerEvents: 'none',
             userSelect: 'none',
           }}
@@ -81,10 +117,10 @@ export default function Hero() {
         <h1
           style={{
             fontFamily: 'var(--font-display)',
-            fontWeight: 800,
+            fontWeight: 700,
             fontSize: 'clamp(2rem, 5vw, 3.6rem)',
             lineHeight: 1.12,
-            letterSpacing: '-0.03em',
+            letterSpacing: '-0.02em',
             color: 'var(--dark)',
             margin: '0 0 1.5rem',
           }}
@@ -130,42 +166,10 @@ export default function Hero() {
             margin: '0 auto 2.5rem',
           }}
         >
-          In a recent workshop, students and faculty at Loomis Chaffee shared their thoughts on AI in school.
-          Here's what they said — 1,293 responses, unfiltered and searchable.
+          At the end of a facilitated conversation between students and faculty about AI at Loomis Chaffee,
+          participants shared their thoughts on sticky notes. Here's what they said — 1,290 responses,
+          unfiltered and in their own words.
         </p>
-
-        {/* Stat pills */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '0.75rem',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            marginBottom: '2.5rem',
-          }}
-        >
-          {[
-            { label: 'STOP', count: 419, color: 'var(--coral)' },
-            { label: 'START', count: 446, color: 'var(--green)' },
-            { label: 'CONTINUE', count: 425, color: 'var(--blue)' },
-          ].map((s) => (
-            <div
-              key={s.label}
-              style={{
-                background: s.color,
-                borderRadius: 999,
-                padding: '0.45rem 1.1rem',
-                fontFamily: 'var(--font-display)',
-                fontWeight: 700,
-                fontSize: '0.9rem',
-                color: 'var(--dark)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              }}
-            >
-              {s.count} {s.label}
-            </div>
-          ))}
-        </div>
 
         {/* CTA */}
         <a

@@ -4,11 +4,13 @@ import Hero from './components/Hero.jsx'
 import StickyNotesWall from './components/StickyNotesWall.jsx'
 import Visualizations from './components/Visualizations.jsx'
 import KeyTakeaways from './components/KeyTakeaways.jsx'
+import AllNotesPage from './components/AllNotesPage.jsx'
 
 export default function App() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [viewAll, setViewAll] = useState(false)
 
   useEffect(() => {
     fetch('./data/responses.csv')
@@ -73,6 +75,10 @@ export default function App() {
     )
   }
 
+  if (viewAll) {
+    return <AllNotesPage data={data} onBack={() => setViewAll(false)} />
+  }
+
   return (
     <>
       <nav className="sticky-nav">
@@ -89,7 +95,7 @@ export default function App() {
           <Hero />
         </section>
 
-        <StickyNotesWall data={data} />
+        <StickyNotesWall data={data} onViewAll={() => setViewAll(true)} />
 
         <Visualizations data={data} />
 

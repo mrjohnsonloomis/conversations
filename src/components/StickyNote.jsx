@@ -31,7 +31,7 @@ export default function StickyNote({ response, category, flag, index }) {
         cursor: 'default',
         opacity: isFlagged ? 0.6 : 1,
         position: 'relative',
-        minHeight: 120,
+        aspectRatio: '1 / 1',
         display: 'flex',
         flexDirection: 'column',
         gap: '0.5rem',
@@ -95,7 +95,7 @@ export default function StickyNote({ response, category, flag, index }) {
       <p
         style={{
           fontFamily: 'var(--font-hand)',
-          fontSize: '1.05rem',
+          fontSize: '1.25rem',
           lineHeight: 1.45,
           color: '#1a1a1a',
           margin: 0,

@@ -10,7 +10,6 @@ const FILTER_COLORS = {
   CONTINUE: '#80CAFF',
 }
 
-// Deterministic Fisher-Yates-style shuffle using a numeric seed
 function seededShuffle(arr, seed) {
   const a = [...arr]
   let s = seed
@@ -22,20 +21,16 @@ function seededShuffle(arr, seed) {
   return a
 }
 
-export default function StickyNotesWall({ data }) {
+export default function StickyNotesWall({ data, onViewAll }) {
   const [activeFilter, setActiveFilter] = useState('ALL')
   const [shuffleKey, setShuffleKey] = useState(1)
 
-  const filtered = useMemo(() => {
+  const visible = useMemo(() => {
     const base = activeFilter === 'ALL'
       ? data
       : data.filter((d) => d.category === activeFilter)
-    return seededShuffle(base, shuffleKey)
+    return seededShuffle(base, shuffleKey).slice(0, 9)
   }, [data, activeFilter, shuffleKey])
-
-  const handleShuffle = () => {
-    setShuffleKey((k) => k + 1)
-  }
 
   return (
     <section
@@ -45,15 +40,15 @@ export default function StickyNotesWall({ data }) {
         padding: '5rem 2rem',
       }}
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         {/* Section header */}
         <div style={{ marginBottom: '2.5rem' }}>
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontWeight: 800,
+              fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
               margin: '0 0 0.5rem',
               color: 'var(--dark)',
             }}
@@ -68,7 +63,7 @@ export default function StickyNotesWall({ data }) {
               margin: 0,
             }}
           >
-            Browse all {data.length} responses from the workshop. Filter by category or shuffle for a fresh view.
+            A sample of 9 responses from the workshop. Shuffle for a new set, or filter by category.
           </p>
         </div>
 
@@ -82,11 +77,10 @@ export default function StickyNotesWall({ data }) {
             marginBottom: '2rem',
           }}
         >
-          {/* Filter pills */}
           {FILTERS.map((f) => (
             <button
               key={f}
-              onClick={() => setActiveFilter(f)}
+              onClick={() => { setActiveFilter(f); setShuffleKey((k) => k + 1) }}
               style={{
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
@@ -118,19 +112,10 @@ export default function StickyNotesWall({ data }) {
             </button>
           ))}
 
-          {/* Divider */}
-          <div
-            style={{
-              width: 1,
-              height: 24,
-              background: 'var(--gray)',
-              margin: '0 0.25rem',
-            }}
-          />
+          <div style={{ width: 1, height: 24, background: 'var(--gray)', margin: '0 0.25rem' }} />
 
-          {/* Shuffle button */}
           <button
-            onClick={handleShuffle}
+            onClick={() => setShuffleKey((k) => k + 1)}
             style={{
               fontFamily: 'var(--font-body)',
               fontWeight: 500,
@@ -157,36 +142,21 @@ export default function StickyNotesWall({ data }) {
           >
             <span role="img" aria-label="shuffle">🔀</span> Shuffle
           </button>
-
-          {/* Count badge */}
-          <span
-            style={{
-              marginLeft: 'auto',
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.85rem',
-              color: '#888',
-            }}
-          >
-            Showing {filtered.length} note{filtered.length !== 1 ? 's' : ''}
-          </span>
         </div>
 
-        {/* Notes grid */}
+        {/* 3×3 Notes grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gap: '1.5rem',
-            alignItems: 'start',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '2rem',
           }}
         >
-          {filtered.map((item, idx) => (
+          {visible.map((item, idx) => (
             <div
               key={`${item.id}-${shuffleKey}`}
               className="fade-in-up"
-              style={{
-                animationDelay: `${Math.min(idx, 50) * 30}ms`,
-              }}
+              style={{ animationDelay: `${idx * 40}ms` }}
             >
               <StickyNote
                 response={item.response}
@@ -196,6 +166,35 @@ export default function StickyNotesWall({ data }) {
               />
             </div>
           ))}
+        </div>
+
+        {/* View All link */}
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <button
+            onClick={onViewAll}
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontWeight: 500,
+              fontSize: '0.95rem',
+              padding: '0.7rem 1.8rem',
+              borderRadius: 999,
+              border: '2px solid var(--dark)',
+              background: 'transparent',
+              color: 'var(--dark)',
+              cursor: 'pointer',
+              transition: 'background 0.15s ease, color 0.15s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--dark)'
+              e.currentTarget.style.color = '#fff'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.color = 'var(--dark)'
+            }}
+          >
+            View all 1,290 responses →
+          </button>
         </div>
       </div>
     </section>
